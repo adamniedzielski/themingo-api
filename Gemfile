@@ -39,3 +39,5 @@ gem 'rails_12factor', group: :production
 gem 'pg', group: :production
 gem 'thin'
 gem 'devise'
+gem 'angular_rails_csrf'
+gem 'rack-cors', :require => 'rack/cors'
