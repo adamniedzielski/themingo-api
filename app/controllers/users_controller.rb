@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   def change
     success = [true, false].sample
     if success
-      render :json => { :message => "Operation completed" }
+      render :json => { :message => "Red" }
     else
-      render :json => { :message => "Operation failed" }
+      render :json => { :message => "Blue" }
     end
   end
 end
