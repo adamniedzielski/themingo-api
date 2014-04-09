@@ -1,7 +1,7 @@
 ThemingoApi::Application.routes.draw do
-  devise_for :users, controllers: { sessions: "sessions" }
+  devise_for :users, controllers: { sessions: "sessions" }, :defaults => { :format => 'json' }
 
-  resources :users, :only => [:index] do
+  resources :users, :only => [:index], :defaults => { :format => 'json' } do
     collection do
       post 'change'
     end
