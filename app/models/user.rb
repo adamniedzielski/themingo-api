@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :posts, through: :weekly_themes
   has_many :weekly_themes
   has_many :theme_groups
-  validates :name, presence: true
+  validates :nickname, presence: true
 
   
   
