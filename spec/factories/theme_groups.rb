@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :theme_group do
+  #	name = "testing"
   end
 end

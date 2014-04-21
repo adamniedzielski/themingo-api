@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :weekly_theme do
+  #	name "testing weekly theme group"
+  #	theme_group "testing theme group"
   end
 end
