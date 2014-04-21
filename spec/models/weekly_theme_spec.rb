@@ -8,7 +8,7 @@ describe WeeklyTheme do
 
   specify :fields do
     expect(@weekly_theme).to respond_to(:name)
-    expect(weekly_theme).to respond_to(:description)
+    expect(@weekly_theme).to respond_to(:description)
   end
 
   it "belongs to theme group" do
@@ -31,7 +31,7 @@ describe WeeklyTheme do
 
     it "is required" do
       @weekly_theme.theme_group = nil
-      expect(@post.errors_on(:theme_group)).to be_present
+      expect(@weekly_theme.errors_on(:theme_group)).to be_present
     end
   end
 
