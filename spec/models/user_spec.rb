@@ -20,7 +20,7 @@ describe User do
   describe "nickname" do
 
     it "is required" do
-      @user.nickname
+      @user.nickname = nil
       expect(@user.errors_on(:nickname)).to be_present
     end
   end
