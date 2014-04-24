@@ -8,7 +8,7 @@ describe ThemeGroup do
 
   specify "fields" do
     expect(@group).to respond_to(:name)
-    expect(@group).to respond_to(:decription)
+    expect(@group).to respond_to(:description)
   end
 
   it "has many weekly themes" do
