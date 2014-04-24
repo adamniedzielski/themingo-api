@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424120324) do
+ActiveRecord::Schema.define(version: 20140424133024) do
+
+  create_table "memberships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "theme_group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "memberships", ["theme_group_id"], name: "index_memberships_on_theme_group_id"
+  add_index "memberships", ["user_id"], name: "index_memberships_on_user_id"
 
   create_table "posts", force: true do |t|
     t.datetime "created_at"
@@ -59,8 +69,7 @@ ActiveRecord::Schema.define(version: 20140424120324) do
   create_table "weekly_themes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "group_theme_id"
-    t.string   "theme_group"
+    t.integer  "theme_group_id"
     t.string   "name"
     t.text     "description"
   end

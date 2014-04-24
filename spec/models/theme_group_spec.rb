@@ -19,6 +19,10 @@ describe ThemeGroup do
     expect(@group).to respond_to(:users)
   end
 
+  it "has many memberships" do
+    expect(@group).to respond_to(:memberships)
+  end
+
   describe "name" do
 
     it "is required" do

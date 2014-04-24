@@ -32,4 +32,8 @@ describe User do
   it "has many posts" do
     expect(@user).to respond_to(:posts)
   end
+
+  it "has many memberships" do
+    expect(@user).to respond_to(:memberships)
+  end
 end
