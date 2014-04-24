@@ -6,5 +6,8 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :user, presence: true
-  
+ 
+  def theme_group
+    weekly_theme.theme_group
+  end 
 end

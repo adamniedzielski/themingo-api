@@ -20,6 +20,10 @@ describe Post do
     expect(@post).to respond_to(:weekly_theme)
   end
 
+  it "belongs to theme group" do
+    expect(@post).to respond_to(:theme_group)
+  end
+
   describe "title" do
 
     it "is required" do
