@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+  def friend?(user)
+    (theme_groups & user.theme_groups).any?
+  end  
 end

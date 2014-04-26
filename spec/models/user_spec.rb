@@ -36,4 +36,31 @@ describe User do
   it "has many memberships" do
     expect(@user).to respond_to(:memberships)
   end
+
+  describe "#friend?" do
+
+    before do
+      @another_user = FactoryGirl.build(:user)
+    end
+
+    context "when the two users have at least one common group" do
+
+      before do
+        group = FactoryGirl.build(:theme_group)
+        @user.theme_groups << group
+        @another_user.theme_groups << group
+      end
+
+      it "returns true" do
+        expect(@user.friend?(@another_user)).to eq true
+      end
+    end
+
+    context "when the two users have no common group" do
+
+      it "returns false" do
+        expect(@user.friend?(@another_user)).to eq false
+      end
+    end
+  end
 end
