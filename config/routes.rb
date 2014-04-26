@@ -1,11 +1,21 @@
 ThemingoApi::Application.routes.draw do
-  devise_for :users, controllers: { sessions: "sessions" }, :defaults => { :format => 'json' }
 
-  resources :users, :only => [:index], :defaults => { :format => 'json' } do
+  resources :users, :only => [:index, :show], :defaults => { :format => 'json' } do
     collection do
       post 'change'
+      patch 'update', :path => ''
+      delete 'destroy', :path => ''
     end
   end
+
+  devise_for  :users, 
+              :controllers => 
+                { 
+                  :sessions => "sessions",
+                  :registrations => "registrations"
+                },
+              :defaults => { :format => 'json' }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
