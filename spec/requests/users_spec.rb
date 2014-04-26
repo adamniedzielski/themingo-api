@@ -92,13 +92,13 @@ describe "Users" do
     before do
       @user = FactoryGirl.create(:user)
       @another_user = FactoryGirl.create(:user)
-      allow(User).to receive(:find) { @another_user }
+      stub(User).find(@another_user.id.to_s) { @another_user }
     end
 
     context "when given user is a friend of current user" do
 
       before do
-        allow(@another_user).to receive(:friend?) { true }
+        stub(@another_user).friend?(@user) { true }
         get user_path(@another_user), {}, authentication_headers(@user)
       end
 
@@ -112,7 +112,7 @@ describe "Users" do
     context "when given user is *not* a friend of current user" do
 
       before do
-        allow(@another_user).to receive(:friend?) { false }
+        stub(@another_user).friend?(@user) { false }
         get user_path(@another_user), {}, authentication_headers(@user)
       end
 

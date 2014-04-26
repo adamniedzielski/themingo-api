@@ -33,6 +33,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'sqlite3'
   gem 'factory_girl_rails'
+  gem 'bogus'
 end
 
 gem 'rails_12factor', group: :production
