@@ -2,9 +2,8 @@
 
 FactoryGirl.define do
   factory :post do
-  #	title "test post"
-  #	body  "Its just a test post in factoryGirl"
-  #	user  "Admin"
-  #	weekly_theme "3"
+  	title "test post"
+  	body  "Its just a test post in factoryGirl"
+  	weekly_theme
   end
 end
