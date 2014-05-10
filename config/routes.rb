@@ -17,6 +17,14 @@ ThemingoApi::Application.routes.draw do
               :defaults => { :format => 'json' }
 
   resources :posts, :only => [:create, :update, :destroy], :defaults => { :format => 'json' }
+  resources :theme_groups, :only => [:index, :show],
+            :defaults => { :format => 'json' } do
+
+    member do
+      post 'join'
+      get 'users'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
