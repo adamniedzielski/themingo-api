@@ -12,5 +12,13 @@ class User < ActiveRecord::Base
 
   def friend?(user)
     (theme_groups & user.theme_groups).any?
-  end  
+  end
+
+  def member?(group)
+    theme_groups.include?(group)
+  end
+
+  def join(group)
+    theme_groups.push(group)
+  end
 end

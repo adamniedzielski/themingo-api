@@ -63,4 +63,41 @@ describe User do
       end
     end
   end
+
+  describe "#member?" do
+
+    before do
+      @group = FactoryGirl.build(:theme_group)
+    end
+
+    context "when the user belongs to group" do
+      
+      before do
+        @user.theme_groups.push(@group)
+      end
+
+      it "returns true" do
+        expect(@user.member?(@group)).to eq true
+      end
+    end
+
+    context "when the user does not belong to group" do
+
+      it "returns false" do
+        expect(@user.member?(@group)).to eq false
+      end
+    end
+  end
+
+  describe "#join" do
+
+    before do
+      @group = FactoryGirl.build(:theme_group)
+    end
+
+    it "makes a user member of this group" do
+      @user.join(@group)
+      expect(@user.member?(@group)).to eq true
+    end
+  end
 end
