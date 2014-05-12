@@ -1,5 +1,7 @@
 ThemingoApi::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :users, :only => [:index, :show], :defaults => { :format => 'json' } do
     collection do
       post 'change'
