@@ -2,6 +2,8 @@
 class UsersController < ApplicationController
   include UserParams
 
+  acts_as_token_authentication_handler_for User
+
   def update
     if current_user.update(user_params)
       head :no_content

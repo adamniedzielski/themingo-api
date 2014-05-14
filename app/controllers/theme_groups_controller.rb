@@ -1,5 +1,6 @@
 
 class ThemeGroupsController < ApplicationController
+  acts_as_token_authentication_handler_for User
 
   def index
     theme_groups = ThemeGroup.all

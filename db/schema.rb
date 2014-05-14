@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20140512214812) do
   create_table "weekly_themes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "group_theme_id"
+    t.integer  "theme_group_id"
     t.string   "name"
     t.text     "description"
   end
