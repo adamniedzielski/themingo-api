@@ -1,5 +1,6 @@
 class SessionsController < Devise::SessionsController
-  
+  acts_as_token_authentication_handler_for User, :only => :destroy
+
   def create
     self.resource = warden.authenticate!(auth_options)
     sign_in(resource_name, resource)
